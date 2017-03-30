@@ -11,7 +11,7 @@ headers = {
 
 def call(query, first = 1):
     global url_format, headers
-    while True
+    while True:
         try:
             query = urllib.quote(query)
             url = url_format.format(query = query, first = first)
