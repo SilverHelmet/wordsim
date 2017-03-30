@@ -39,8 +39,8 @@ if __name__ == "__main__":
     for idx, word in enumerate(word_list):
         words[word] = str(idx)
     wiki_dir = os.path.join(base_dir,  'enwiki')
-    if len(sys.argv) > 2:
-        wiki_dir = sys.argv[2]
+    if len(sys.argv) >= 2:
+        wiki_dir = sys.argv[1]
     out_dir = os.path.join(base_dir, "result")
     if not os.path.exists(out_dir):
         os.mkdir(out_dir)
