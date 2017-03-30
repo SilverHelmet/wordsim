@@ -11,10 +11,15 @@ headers = {
 
 def call(query, first = 1):
     global url_format, headers
-    query = urllib.quote(query)
-    url = url_format.format(query = query, first = first)
-    request = urllib2.Request(url, None, headers)
-    response = urllib2.urlopen(request)
-    return response.read()
+    while True
+        try:
+            query = urllib.quote(query)
+            url = url_format.format(query = query, first = first)
+            request = urllib2.Request(url, None, headers)
+            response = urllib2.urlopen(request)
+            return response.read()
+        except Exception e
+            print e
+    
 
 

@@ -29,10 +29,6 @@ def stat(filepath, words, outf):
                 if word in words:
                     outf.write(words[word] + " ")
 
-            
-            
-        
-
 if __name__ == "__main__":
     word_list = load_words()
     words = {}
