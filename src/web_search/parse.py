@@ -30,6 +30,7 @@ def parse_abstract(soup):
         title_div = li.select('div.b_title')
         if len(title_div) == 0:
             continue
+        title_div = title_div[0]
         href = title_div.select('h2 > a[target=_blank]')[0]['href'].encode('utf-8')
         abstract_div = li.select('div.b_caption')[0]
         abstract = abstract_div.p.text.encode('utf-8')
