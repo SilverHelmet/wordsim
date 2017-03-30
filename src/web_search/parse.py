@@ -27,9 +27,10 @@ def parse_abstract(soup):
     abstract_li = soup.select('li.b_algo')
     ret = {}
     for li in abstract_li:
-        title_div = li.select('div.b_title')[0]
+        title_div = li.select('div.b_title')
+        if len(title_div) == 0:
+            continue
         href = title_div.select('h2 > a[target=_blank]')[0]['href'].encode('utf-8')
-
         abstract_div = li.select('div.b_caption')[0]
         abstract = abstract_div.p.text.encode('utf-8')
         ret[href] = abstract
@@ -37,7 +38,7 @@ def parse_abstract(soup):
 
 
 if __name__ == "__main__":
-    soup = BeautifulSoup(load('bing_search_result/internet_2.html'), 'html.parser')
+    soup = BeautifulSoup(load('bing_search_result/Arafat_first=67.html'), 'html.parser')
     print parse_cnt(soup)
     print parse_next_page(soup)
     print parse_abstract(soup)['https://en.wikipedia.org/wiki/History_of_the_Internet']
