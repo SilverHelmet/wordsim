@@ -30,3 +30,4 @@ if __name__ == "__main__":
     word_pairs = load_word_pairs()
     print "#word = %d" %len(words)
     print "#word_pair = %d" %len(word_pairs)
+    print words[139]
