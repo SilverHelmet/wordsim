@@ -32,8 +32,14 @@ def parse_abstract(soup):
             continue
         title_div = title_div[0]
         href = title_div.select('h2 > a[target=_blank]')[0]['href'].encode('utf-8')
-        abstract_div = li.select('div.b_caption')[0]
-        abstract = abstract_div.p.text.encode('utf-8')
+        abstract_div = li.select('div.b_caption')
+        if len(abstract_div) == 0:
+            continue
+        abstract_div = abstract_div[0]
+        abs_p = abstract_div.p
+        if abs_p is None:
+            continue
+        abstract = abs_p.text.encode('utf-8')
         ret[href] = abstract
     return ret
 

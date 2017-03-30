@@ -30,7 +30,7 @@ def query(word):
             cnt = parse_cnt(soup)
             outf = file(cnt_file, 'a')
             outf.write("%s\t%d\n" %(word, cnt))
-            outf.close()
+            outf.clo·se()
             if cnt == 0:
                 outf = file(os.path.join(base_dir, 'bing_saerch_result/error.txt'), 'a')
                 outf.write(word + '\n')
