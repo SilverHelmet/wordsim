@@ -57,5 +57,4 @@ if __name__ == "__main__":
     cnt_file = os.path.join(base_dir, 'bing_search_result/cnt.tsv')
     for word in words:
         query(word)
-        break
 
