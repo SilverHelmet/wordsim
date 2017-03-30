@@ -16,7 +16,7 @@ def query(word):
     
     abstract = {}
     first = 1
-    while first < 120:
+    while len(abstract) < 110:
         time.sleep(3)
         print "\tquery word = %s first = %d" %(word, first)
         html = call(word, first)
