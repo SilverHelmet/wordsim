@@ -18,7 +18,7 @@ def call(query, first = 1):
             request = urllib2.Request(url, None, headers)
             response = urllib2.urlopen(request)
             return response.read()
-        except Exception e
+        except Exception, e
             print e
     
 
