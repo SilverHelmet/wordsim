@@ -52,6 +52,6 @@ def load(filepath, words, doc_size):
 
 if __name__ == "__main__":
     words = load_words()
-    doc_size = 754
+    doc_size = 5347267
     word_vec = load(os.path.join(base_dir, 'result/oc.tsv'), words, doc_size)
     np.save(os.path.join(base_dir, 'result/word_ESA_vector'), word_vec)
