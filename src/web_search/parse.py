@@ -15,7 +15,10 @@ def parse_cnt(soup):
     return num
 
 def parse_next_page(soup):
-    a = soup.select('a.sb_pagN')[0]
+    a = soup.select('a.sb_pagN')
+    if len(a) == 0:
+        return 0
+    a = a[0]
     x = a['href']
     pairs = a['href'].split('?')[1].split("&")
     for key_value in pairs:
@@ -45,7 +48,7 @@ def parse_abstract(soup):
 
 
 if __name__ == "__main__":
-    soup = BeautifulSoup(load('bing_search_result/Arafat_first=67.html'), 'html.parser')
+    soup = BeautifulSoup(load('bing_search_result/cock_first=50.html'), 'html.parser')
     print parse_cnt(soup)
     print parse_next_page(soup)
     print parse_abstract(soup)['https://en.wikipedia.org/wiki/History_of_the_Internet']

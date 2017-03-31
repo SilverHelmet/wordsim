@@ -44,7 +44,13 @@ def query(word):
 
 
         next_pg = parse_next_page(soup)
+        if next_pg == 0:
+            outf = file(os.path.join(base_dir, 'bing_search_result/error.txt'), 'a')
+            outf.write(word + '\n')
+            outf.close()
+            break
         first = next_pg
+        
 
     abs_outf = file(os.path.join(html_out_dir, 'abstracts.tsv'), 'w')
     for url in abstract:
