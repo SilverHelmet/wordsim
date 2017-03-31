@@ -25,7 +25,7 @@ if __name__ == "__main__":
                 sim = x.path_similarity(y)
                 if sim is not None:
                     path_sim = max(path_sim, sim)
-                if x.pos() == y.pos() and x.pos().encode('utf-8') not in ['a']:
+                if x.pos() == y.pos() and x.pos().encode('utf-8') not in ['a', 's']:
                     sim = x.lin_similarity(y, semcor_ic)
                     if sim is not None:
                         lin_sim = max(lin_sim, sim)
