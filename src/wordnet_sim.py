@@ -25,15 +25,16 @@ if __name__ == "__main__":
                 sim = x.path_similarity(y)
                 if sim is not None:
                     path_sim = max(path_sim, sim)
+                    sim = x.lin_similarity(y, semcor_ic)
+                    if sim is not None:
+                        lin_sim = max(lin_sim, sim)
                 sim = x.wup_similarity(y)
                 if sim is not None:
                     wup_sim = max(wup_sim, sim)
-                sim = x.lin_similarity(y, semcor_ic)
-                if sim is not None:
-                    lin_sim = max(lin_sim, sim)
+                
         path_sim_outf.write("%s %s %.6f\n" %(w1, w2, path_sim))
         wup_sim_outf.write("%s %s %.6f\n" %(w1, w2, wup_sim))
-        lim_sim_outf.write("%s %s %.6f\n" %(w1, w2, lin_sim))
+        lin_sim_outf.write("%s %s %.6f\n" %(w1, w2, lin_sim))
 
         path_sims.append(path_sim)
         wup_sims.append(wup_sim)
