@@ -52,8 +52,8 @@ if __name__ == "__main__":
         if sim == -1:
             pass
         else:
-            sims.append(sim)
             indices.append(idx)
+        sims.append(sim)
 
         sim_outf.write("%s %s %.6f\n" %(w1, w2, sim))
         idx += 1
