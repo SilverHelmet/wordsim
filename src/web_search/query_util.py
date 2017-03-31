@@ -21,5 +21,9 @@ def call(query, first = 1):
         except Exception, e:
             print e
     
+if __name__ == "__main__":
+    query = 'cock'
+    first = 50
+    print call(query, 50)
 
 
