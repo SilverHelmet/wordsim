@@ -34,6 +34,7 @@ if __name__ == "__main__":
     path_sim_outf.close()
     wup_sim_outf.close()
 
+    ground_truth = load_ground_truth()
     path_sim_correlation = spearman_correlation(ground_truth, path_sims)
     wup_sim_correlation = spearman_correlation(ground_truth, wup_sims)
 
