@@ -1,4 +1,5 @@
 import os
+import numpy as np
 
 def load_words():
     global data_dir
@@ -20,6 +21,17 @@ def load_word_pairs():
         p = line.strip().split('\t')
         word_pairs.append((p[0], p[1]))
     return word_pairs
+
+def load_ground_truth():
+    global data_dir
+    x = []
+    for idx, line in enumerate(file(os.path.join(data_dir, 'combined.tab'))):
+        if idx == 0:
+            continue
+        p = line.strip().split("\t")
+        p.append(float(x[2]))
+    return np.array(x)
+
 
 
 base_dir = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
