@@ -1,4 +1,5 @@
 from nltk.corpus import wordnet as wn
+from nltk.corpus import wordnet_ic
 from .util import load_word_pairs, base_dir, load_ground_truth
 from .evaluation import spearman_correlation
 import os
@@ -12,6 +13,7 @@ if __name__ == "__main__":
     path_sim_outf = file(os.path.join(base_dir, 'similarity/pathsim.txt'), 'w')
     wup_sim_outf = file(os.path.join(base_dir, 'similarity/wupsim.txt'), 'w')
     lin_sim_outf = file(os.path.join(base_dir, 'similarity/linsim.txt'), 'w')
+    semcor_ic = wordnet_ic.ic('ic-semcor.dat')
     for w1, w2 in word_pairs:
         s1 = wn.synsets(w1)
         s2 = wn.synsets(w2)
@@ -26,7 +28,7 @@ if __name__ == "__main__":
                 sim = x.wup_similarity(y)
                 if sim is not None:
                     wup_sim = max(wup_sim, sim)
-                sim = x.lin_similarity(y)
+                sim = x.lin_similarity(y, semcor_ic)
                 if sim is not None:
                     lin_sim = max(lin_sim, sim)
         path_sim_outf.write("%s %s %.6f\n" %(w1, w2, path_sim))
