@@ -29,10 +29,10 @@ class WordVectors:
 
     def calc_tfidf(self):
         self.vectors = np.array(self.vectors)
-        df = np.not_equal(self.vectors, 0).sum(1) + WordVectors.word_df_bias
-        idf = np.log((self.doc_size + 0.0) / df)
-        idf = np.expand_dims(idf, 1)
-        self.vectors = idf * self.vectors
+        # df = np.not_equal(self.vectors, 0).sum(1) + WordVectors.word_df_bias
+        # idf = np.log((self.doc_size + 0.0) / df)
+        # idf = np.expand_dims(idf, 1)
+        # self.vectors = idf * self.vectors
         
     def finish(self):
         assert self.index == len(self.vectors[0]) - 1
@@ -66,7 +66,7 @@ if __name__ == "__main__":
     funcs = [cosine, jaccard, dice]
     for func in funcs:
         func_name = func.__name__
-        outf = file(sim_out_dir + "/ESA_wiki_%s.tsv" %func_name, 'w')
+        outf = file(sim_out_dir + "/ESA_wiki_%s.txt" %func_name, 'w')
         word_pairs = load_word_pairs()
         sims = []
         cnt = 0
