@@ -31,6 +31,7 @@ if __name__ == "__main__":
     
     print "successful size = %d" %len(successful_indecies)
     correlation = spearman_correlation(ground_truth, sims)
+    print "correlation = %f" %correlation
 
 
 
