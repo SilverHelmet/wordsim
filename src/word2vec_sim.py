@@ -11,7 +11,7 @@ if __name__ == "__main__":
     model = gensim.models.KeyedVectors.load_word2vec_format("~/data/GoogleNews-vectors-negative300.bin", binary = True)
     sims = []
     successful_indecies = []
-    print "test size = %d" %(word_pairs)
+    print "test size = %d" %len(word_pairs)
     idx = 0
     for w1, w2 in word_pairs:
         if w1 in model.vocab and w2 in model.vocab:
