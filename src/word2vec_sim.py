@@ -2,6 +2,7 @@ from .util import base_dir, load_ground_truth, load_word_pairs
 from .evaluation import spearman_correlation
 import gensim
 import numpy as np
+import os
 
 if __name__ == "__main__":
     word_pairs = load_word_pairs()
