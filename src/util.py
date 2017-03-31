@@ -29,13 +29,14 @@ def load_ground_truth():
         if idx == 0:
             continue
         p = line.strip().split("\t")
-        p.append(float(x[2]))
+        x.append(float(p[2]))
     return np.array(x)
 
 
 
 base_dir = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
 data_dir = os.path.join(base_dir, "wordsim353")
+
 
 if __name__ == "__main__":
     words = load_words()
