@@ -51,7 +51,7 @@ if __name__ == "__main__":
     ground_truth = load_ground_truth()
     path_sim_correlation = spearman_correlation(ground_truth, path_sims)
     wup_sim_correlation = spearman_correlation(ground_truth, wup_sims)
-    lim_sim_correlation = spearman_correlation(ground_truth, lin_sims)
+    lin_sim_correlation = spearman_correlation(ground_truth, lin_sims)
 
     print "pathsim correlation = %f" %(path_sim_correlation)
     print "wupsim correlation = %f" %(wup_sim_correlation)
