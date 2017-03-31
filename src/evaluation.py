@@ -50,8 +50,11 @@ def web_dice(p, q, pq, c = 5):
         return 0
     return (2.0 * pq) / (p + q)
 
-def web_pmi(p, q, pq, c = 5, N = 1):
-    return np.log
+def web_pmi(p, q, pq, c = 5, N = 1.0):
+    p = p / N
+    q = q / N
+    pq = pq / N
+    return np.log2(pq / (p * q))
 
 def ESA_wiki(func):
     word_pairs = load_word_pairs()
