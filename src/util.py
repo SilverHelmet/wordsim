@@ -44,3 +44,4 @@ if __name__ == "__main__":
     print "#word = %d" %len(words)
     print "#word_pair = %d" %len(word_pairs)
     print words[139]
+    print sorted(load_ground_truth())
