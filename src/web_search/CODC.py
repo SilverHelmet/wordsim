@@ -1,5 +1,5 @@
 from ..util import load_word_pairs, load_ground_truth, base_dir
-from ..evalation import spearman_correlation
+from ..evalution import spearman_correlation
 import os
 import numpy as np
 
