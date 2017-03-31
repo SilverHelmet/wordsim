@@ -49,6 +49,8 @@ def query(word):
             outf.write(word + '\n')
             outf.close()
             break
+        if next_pg <= first:
+            break
         first = next_pg
         
 
