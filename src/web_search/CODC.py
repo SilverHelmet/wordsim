@@ -46,7 +46,7 @@ if __name__ == "__main__":
     indices = []
     idx = 0
     sims = []
-    sim_outf = os.path.join(base_dir, 'similarity/CODC_sim.txt', 'w')
+    sim_outf = file(os.path.join(base_dir, 'similarity/CODC_sim.txt'), 'w')
     for w1, w2 in word_pairs:
         sim = calc_CODC(w1, w2, data_dir)
         if sim == -1:
