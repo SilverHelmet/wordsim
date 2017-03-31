@@ -33,7 +33,7 @@ def query(word):
             outf.write("%s\t%d\n" %(word, cnt))
             outf.close()
             if cnt == 0:
-                outf = file(os.path.join(base_dir, 'bing_saerch_result/error.txt'), 'a')
+                outf = file(os.path.join(base_dir, 'bing_search_result/error.txt'), 'a')
                 outf.write(word + '\n')
                 outf.close()
                 break
