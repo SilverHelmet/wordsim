@@ -4,6 +4,7 @@ import os
 from bs4 import BeautifulSoup
 from .parse import parse_cnt, parse_next_page, parse_abstract
 import time
+import sys
 
 
 
