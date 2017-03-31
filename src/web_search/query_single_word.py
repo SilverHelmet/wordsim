@@ -56,7 +56,7 @@ def query(word):
 if __name__ == "__main__":
     words = load_words()
     if len(sys.argv) >= 2:
-        words = words[:words.index(sys.arg[1])]
+        words = words[:words.index(sys.argv[1])]
     cnt_file = os.path.join(base_dir, 'bing_search_result/cnt.tsv')
     for word in words:
         query(word)
