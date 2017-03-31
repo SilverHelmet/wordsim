@@ -54,8 +54,8 @@ def load(filepath, words, doc_size):
 
 if __name__ == "__main__":
     words = load_words()
-    # doc_size = 5347267
-    doc_size = 754
+    doc_size = 5347267
+    # doc_size = 754
     word_vec = load(os.path.join(base_dir, 'result/oc.tsv'), words, doc_size)
     print "start calc similarity"
 
